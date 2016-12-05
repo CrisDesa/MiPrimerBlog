@@ -1,14 +1,17 @@
 <html>
   <head>
-    <title>Blog CrisDesa</title>
+    <title>Blog Django Girls</title>
   </head>
   <body>
-    <h1>Un título</h1>
-    <h2>Un subtitulo</h2>
-    <h3>Un sub sub titulo</h3>
-    <p> <em> texto en cursiva</em></p>
-    <p> <a href="https://djangogirls.org">link</a></p>
-    <p>Hola aqui!</p>
-    <p>Trabajando!</p>
+    <div>
+      <h1> <a href="https://djangogirls.org">link</a></h1>
+    </div>
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.fecha_publicacion }}</p>
+        <h1><a href="">{{ post.titulo }}</a></h>
+        <p>{{ post.texto|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
   </body>
 <html>
